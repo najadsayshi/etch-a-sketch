@@ -19,7 +19,7 @@ const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell =>{
 cell.addEventListener("mouseover",()=>{
-    cell.style.backgroundColor= "red";
+    cell.style.backgroundColor= "#F7B980";
 })
 
 })
