@@ -14,6 +14,13 @@ rowDiv.classList.add("row");
 }
 
 
+// select every cells with class cell and give event listener to each using for each
+const cells = document.querySelectorAll(".cell");
 
+cells.forEach(cell =>{
+cell.addEventListener("mouseover",()=>{
+    cell.style.backgroundColor= "red";
+})
 
+})
 
