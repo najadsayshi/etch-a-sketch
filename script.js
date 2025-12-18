@@ -51,7 +51,6 @@ function buildContainer(gridSize){
     }
     hover();    
 }
-// Assigns a random background color to a cell when hovered
 
 
 // Generates and returns a random color
