@@ -1,26 +1,53 @@
 console.log("hello world");
 
-const container = document.querySelector(".container");
-for( let row=0;row<16;row++){
-const rowDiv = document.createElement("div");
-rowDiv.classList.add("row");
-
-    for (let col=0;col<16;col++){
-        const cell = document.createElement("div");
-        cell.classList.add("cell");
-        rowDiv.appendChild(cell);
-    }
-    container.appendChild(rowDiv);
-}
 
 
-// select every cells with class cell and give event listener to each using for each
+// default grid size 
+let gridSize =16;
+buildContainer(gridSize);
+
+// select every cells with class cell and give event listener of hover to each using for each
+function hover(){
 const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell =>{
 cell.addEventListener("mouseover",()=>{
-    cell.style.backgroundColor= "#F7B980";
+    cell.style.backgroundColor= "black";
 })
 
-})
+})}
 
+// button function for grid size
+const button = document.querySelector(".button");
+
+button.addEventListener("click",getGridSizeFromUser);
+
+function getGridSizeFromUser(){
+    let gridSize = prompt("Enter the size of square Grid");
+    if (gridSize>=100){
+        alert("Sorry,Enter a value below 100")
+    }
+    else{
+    buildContainer(gridSize);}
+}
+
+
+
+// building the container
+function buildContainer(gridSize){
+    const container = document.querySelector(".container");
+    container.innerHTML=''
+    for(let row=0;row<gridSize;row++){
+        console.log(gridSize);
+    const rowDiv = document.createElement("div");
+    rowDiv.classList.add("row");
+
+        for (let col=0;col<gridSize;col++){
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            rowDiv.appendChild(cell);
+        }
+        container.appendChild(rowDiv);
+        hover();
+    }
+}
