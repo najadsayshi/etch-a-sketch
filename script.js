@@ -23,9 +23,9 @@ const button = document.querySelector(".button");
 button.addEventListener("click",getGridSizeFromUser);
 
 function getGridSizeFromUser(){
-    let gridSize = prompt("Enter the size of square Grid");
-    if (gridSize>=100){
-        alert("Sorry,Enter a value below 100")
+    let gridSize = Number(prompt("Enter the size of square Grid"));
+    if (gridSize>=100|| Number.isNaN(gridSize)){
+        alert("Sorry,Enter a value below 100 or Check if the value is a number and not a string");
     }
     else{
     buildContainer(gridSize);}
