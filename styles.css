@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    background-color: yellow;
+    height: 400px;
+    width: 400px;
+}
+
+.row {
+  display: flex;
+  flex: 1;
+  gap: 2px;
+}
+
+
+
+.cell {
+  flex: 1;                
+  border: 1px solid red;
+}
