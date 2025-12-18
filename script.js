@@ -12,7 +12,7 @@ const cells = document.querySelectorAll(".cell");
 
 cells.forEach(cell =>{
 cell.addEventListener("mouseover",()=>{
-    cell.style.backgroundColor= "black";
+    cell.style.backgroundColor= getRandomColor();
 })
 
 })}
@@ -48,6 +48,18 @@ function buildContainer(gridSize){
             rowDiv.appendChild(cell);
         }
         container.appendChild(rowDiv);
-        hover();
     }
+    hover();    
+}
+// Assigns a random background color to a cell when hovered
+
+
+// Generates and returns a random color
+
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 256);
+    const g = Math.floor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
+
+    return `rgb(${r}, ${g}, ${b})`;
 }
